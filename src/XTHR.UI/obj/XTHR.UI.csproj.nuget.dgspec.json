@@ -25,11 +25,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\Git\\XTHR\\src\\XTHR.Core\\XTHR.Core.csproj": {
-                "projectPath": "D:\\Git\\XTHR\\src\\XTHR.Core\\XTHR.Core.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -124,7 +120,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Git\\XTHR\\src\\XTHR.Common\\XTHR.Common.csproj": {
+                "projectPath": "D:\\Git\\XTHR\\src\\XTHR.Common\\XTHR.Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

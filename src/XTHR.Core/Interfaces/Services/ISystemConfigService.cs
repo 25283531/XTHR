@@ -6,6 +6,7 @@ using XTHR.Core.DTOs.Common;
 using XTHR.Core.DTOs.Requests;
 using XTHR.Core.DTOs.SystemConfig;
 using XTHR.Common.Entities;
+using XTHR.Common.Models;
 
 namespace XTHR.Core.Interfaces.Services
 {
@@ -30,7 +31,7 @@ namespace XTHR.Core.Interfaces.Services
         /// <param name="key">配置键</param>
         /// <param name="defaultValue">默认值</param>
         /// <returns>强类型配置值</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<T>> GetConfigValueAsync<T>(string key, T defaultValue = default);
+        Task<XTHR.Core.DTOs.Common.ApiResult<T>> GetConfigValueAsync<T>(string key, T? defaultValue = default);
         
         /// <summary>
         /// 设置配置值
@@ -39,7 +40,7 @@ namespace XTHR.Core.Interfaces.Services
         /// <param name="value">配置值</param>
         /// <param name="description">配置描述</param>
         /// <returns>设置结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> SetConfigValueAsync(string key, string value, string description = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> SetConfigValueAsync(string key, string value, string? description = null);
         
         /// <summary>
         /// 设置强类型配置值
@@ -49,7 +50,7 @@ namespace XTHR.Core.Interfaces.Services
         /// <param name="value">配置值</param>
         /// <param name="description">配置描述</param>
         /// <returns>设置结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> SetConfigValueAsync<T>(string key, T value, string description = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> SetConfigValueAsync<T>(string key, T value, string? description = null);
         
         /// <summary>
         /// 批量设置配置值
@@ -189,7 +190,7 @@ namespace XTHR.Core.Interfaces.Services
         /// <param name="operatorId">操作人ID</param>
         /// <param name="remark">备注</param>
         /// <returns>记录结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> LogConfigOperationAsync(string key, string operation, string oldValue, string newValue, int operatorId, string remark = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> LogConfigOperationAsync(string key, string operation, string? oldValue, string? newValue, int operatorId, string? remark = null);
         
         #endregion
         
@@ -301,21 +302,21 @@ namespace XTHR.Core.Interfaces.Services
         /// </summary>
         /// <param name="key">配置键（可选，为空则刷新所有）</param>
         /// <returns>刷新结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> RefreshConfigCacheAsync(string key = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> RefreshConfigCacheAsync(string? key = null);
         
         /// <summary>
         /// 清除配置缓存
         /// </summary>
         /// <param name="key">配置键（可选，为空则清除所有）</param>
         /// <returns>清除结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> ClearConfigCacheAsync(string key = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<bool>> ClearConfigCacheAsync(string? key = null);
         
         /// <summary>
         /// 预热配置缓存
         /// </summary>
         /// <param name="category">配置分类（可选）</param>
         /// <returns>预热结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<ConfigCacheWarmupResult>> WarmupConfigCacheAsync(string category = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<ConfigCacheWarmupResult>> WarmupConfigCacheAsync(string? category = null);
         
         /// <summary>
         /// 获取配置缓存统计
@@ -346,7 +347,7 @@ namespace XTHR.Core.Interfaces.Services
         /// </summary>
         /// <param name="category">配置分类（可选）</param>
         /// <returns>重置结果</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<SystemConfigResetResult>> ResetSystemConfigsAsync(string category = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<SystemConfigResetResult>> ResetSystemConfigsAsync(string? category = null);
         
         /// <summary>
         /// 检查系统配置健康状态
@@ -359,7 +360,7 @@ namespace XTHR.Core.Interfaces.Services
         /// </summary>
         /// <param name="templateType">模板类型</param>
         /// <returns>配置模板</returns>
-        Task<XTHR.Core.DTOs.Common.ApiResult<IEnumerable<SystemConfigTemplateDto>>> GetSystemConfigTemplatesAsync(string templateType = null);
+        Task<XTHR.Core.DTOs.Common.ApiResult<IEnumerable<SystemConfigTemplateDto>>> GetSystemConfigTemplatesAsync(string? templateType = null);
         
         /// <summary>
         /// 应用配置模板

@@ -223,7 +223,7 @@ namespace XTHR.Common.Models
         {
             return new SalaryBase
             {
-                SalaryBaseID = this.SalaryBaseID,
+                Id = this.Id,
                 EmployeeID = this.EmployeeID,
                 BaseSalary = this.BaseSalary,
                 PositionSalary = this.PositionSalary,
@@ -241,8 +241,8 @@ namespace XTHR.Common.Models
                 ExpiryDate = this.ExpiryDate,
                 IsActive = this.IsActive,
                 Remarks = this.Remarks,
-                CreatedDate = this.CreatedDate,
-                UpdatedDate = this.UpdatedDate,
+                CreatedAt = this.CreatedAt,
+                UpdatedAt = this.UpdatedAt,
                 CreatedBy = this.CreatedBy,
                 UpdatedBy = this.UpdatedBy
             };
@@ -257,17 +257,17 @@ namespace XTHR.Common.Models
         public SalaryBase CreateNewVersion(DateTime newEffectiveDate, string? updatedBy = null)
         {
             var newVersion = this.Clone();
-            newVersion.SalaryBaseID = 0; // 新记录，ID重置
+            newVersion.Id = 0; // 新记录，ID重置
             newVersion.EffectiveDate = newEffectiveDate;
             newVersion.ExpiryDate = null; // 新版本默认无失效日期
-            newVersion.CreatedDate = DateTime.Now;
-            newVersion.UpdatedDate = DateTime.Now;
+            newVersion.CreatedAt = DateTime.Now;
+            newVersion.UpdatedAt = DateTime.Now;
             newVersion.CreatedBy = updatedBy;
             newVersion.UpdatedBy = updatedBy;
             
             // 当前版本设置失效日期
             this.ExpiryDate = newEffectiveDate.AddDays(-1);
-            this.UpdatedDate = DateTime.Now;
+            this.UpdatedAt = DateTime.Now;
             this.UpdatedBy = updatedBy;
             
             return newVersion;
@@ -291,7 +291,7 @@ namespace XTHR.Common.Models
         {
             if (obj is SalaryBase other)
             {
-                return SalaryBaseID == other.SalaryBaseID;
+                return Id == other.Id;
             }
             return false;
         }
@@ -302,7 +302,7 @@ namespace XTHR.Common.Models
         /// <returns>哈希码</returns>
         public override int GetHashCode()
         {
-            return SalaryBaseID.GetHashCode();
+            return Id.GetHashCode();
         }
     }
 }

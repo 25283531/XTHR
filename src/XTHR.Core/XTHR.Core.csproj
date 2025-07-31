@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-
+    <ProjectReference Include="..\XTHR.Common\XTHR.Common.csproj" />
   </ItemGroup>
 
 </Project>

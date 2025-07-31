@@ -6,7 +6,6 @@ namespace XTHR.Core.Entities
 {
     public class PayrollResult : BaseEntity<int>
     {
-        public int Id { get; set; }
         public int EmployeeId { get; set; }
         public DateTime CalculationDate { get; set; }
         public DateTime Period { get; set; }

@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using XTHR.Common.Entities;
+using XTHR.Core.Entities;
 
 namespace XTHR.Core.Interfaces.Repositories
 {

@@ -2,11 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using XTHR.Common.Services;
+using XTHR.Common.Entities;
+using XTHR.Common.Models;
 using XTHR.Core.DTOs;
 using XTHR.Core.DTOs.Attendance;
 using XTHR.Core.DTOs.Common;
 using XTHR.Core.DTOs.Requests;
-using XTHR.Common.Entities;
 
 namespace XTHR.Core.Interfaces
 {
@@ -19,40 +20,34 @@ namespace XTHR.Core.Interfaces
         #region 考勤记录管理
         
         /// <summary>
-        /// 获取考勤记录详情
+        /// 获取指定员工和期间的考勤记录
         /// </summary>
-        /// <param name="attendanceId">考勤记录ID</param>
-        /// <returns>考勤记录详情</returns>
-        Task<AttendanceRecordDetailDto> GetAttendanceRecordDetailAsync(int attendanceId);
+        /// <param name="employeeId">员工ID</param>
+        /// <param name="startDate">开始日期</param>
+        /// <param name="endDate">结束日期</param>
+        /// <returns>考勤记录列表</returns>
+        Task<ApiResult<IEnumerable<XTHR.Common.Models.AttendanceRecord>>> GetAttendanceRecordsAsync(int employeeId, DateTime startDate, DateTime endDate);
         
         /// <summary>
-        /// 获取考勤记录列表（分页）
+        /// 添加考勤记录
         /// </summary>
-        /// <param name="request">查询请求</param>
-        /// <returns>分页考勤记录</returns>
-        Task<PagedResult<AttendanceRecordListDto>> GetAttendanceRecordListAsync(AttendanceRecordQueryRequest request);
-        
-        /// <summary>
-        /// 创建考勤记录
-        /// </summary>
-        /// <param name="request">创建请求</param>
-        /// <returns>创建结果</returns>
-        Task<ServiceResult<int>> CreateAttendanceRecordAsync(CreateAttendanceRecordRequest request);
+        /// <param name="request">添加考勤记录请求</param>
+        /// <returns>添加结果</returns>
+        Task<ApiResult<bool>> AddAttendanceRecordAsync(CreateAttendanceRecordRequest request);
         
         /// <summary>
         /// 更新考勤记录
         /// </summary>
-        /// <param name="attendanceId">考勤记录ID</param>
-        /// <param name="request">更新请求</param>
+        /// <param name="request">更新考勤记录请求</param>
         /// <returns>更新结果</returns>
-        Task<ServiceResult> UpdateAttendanceRecordAsync(int attendanceId, UpdateAttendanceRecordRequest request);
+        Task<ApiResult<bool>> UpdateAttendanceRecordAsync(UpdateAttendanceRecordRequest request);
         
         /// <summary>
         /// 删除考勤记录
         /// </summary>
-        /// <param name="attendanceId">考勤记录ID</param>
+        /// <param name="recordId">记录ID</param>
         /// <returns>删除结果</returns>
-        Task<ServiceResult> DeleteAttendanceRecordAsync(int attendanceId);
+        Task<ApiResult<bool>> DeleteAttendanceRecordAsync(int recordId);
         
         #endregion
         
@@ -172,9 +167,9 @@ namespace XTHR.Core.Interfaces
         /// <summary>
         /// 批量导入考勤记录
         /// </summary>
-        /// <param name="records">考勤记录列表</param>
+        /// <param name="request">批量导入请求</param>
         /// <returns>导入结果</returns>
-        Task<BatchImportResult<AttendanceImportDto>> BatchImportAttendanceRecordsAsync(List<AttendanceImportDto> records);
+        Task<ApiResult<AttendanceImportDto>> BatchImportAttendanceAsync(AttendanceImportRequest request);
         
         /// <summary>
         /// 批量计算考勤统计

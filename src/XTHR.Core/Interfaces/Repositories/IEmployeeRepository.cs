@@ -5,6 +5,7 @@ using XTHR.Core.Common;
 using XTHR.Core.DTOs;
 using XTHR.Core.DTOs.Employee;
 using XTHR.Common.Entities;
+using XTHR.Core.Entities;
 
 namespace XTHR.Core.Interfaces.Repositories
 {

@@ -6,6 +6,7 @@ using XTHR.Core.DTOs;
 using XTHR.Core.DTOs.Payroll;
 using XTHR.Core.DTOs.Requests;
 using XTHR.Common.Entities;
+using XTHR.Core.Entities;
 
 namespace XTHR.Core.Interfaces.Services
 {

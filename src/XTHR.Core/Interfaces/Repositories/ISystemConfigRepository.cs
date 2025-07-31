@@ -4,14 +4,16 @@ using System.Threading.Tasks;
 using XTHR.Core.DTOs;
 using XTHR.Core.DTOs.Common;
 using XTHR.Core.DTOs.Requests;
+using XTHR.Core.DTOs.SystemConfig;
 using XTHR.Common.Entities;
+using XTHR.Common.Models;
 
 namespace XTHR.Core.Interfaces.Repositories
 {
     /// <summary>
     /// 系统配置仓储接口
     /// </summary>
-    public interface ISystemConfigRepository : IBaseRepository<SystemConfig, int>
+    public interface ISystemConfigRepository : IBaseRepository<XTHR.Common.Models.SystemConfig, int>
     {
         #region 配置基础查询
         
@@ -20,7 +22,7 @@ namespace XTHR.Core.Interfaces.Repositories
         /// </summary>
         /// <param name="configKey">配置键</param>
         /// <returns>配置信息</returns>
-        Task<SystemConfig> GetByConfigKeyAsync(string configKey);
+        Task<XTHR.Common.Models.SystemConfig> GetByConfigKeyAsync(string configKey);
         
         /// <summary>
         /// 根据配置键获取配置值
@@ -43,7 +45,7 @@ namespace XTHR.Core.Interfaces.Repositories
         /// </summary>
         /// <param name="category">配置分类</param>
         /// <returns>配置列表</returns>
-        Task<IEnumerable<SystemConfig>> GetByCategoryAsync(string category);
+        Task<IEnumerable<XTHR.Common.Models.SystemConfig>> GetByCategoryAsync(string category);
         
         /// <summary>
         /// 根据数据类型获取配置列表
@@ -248,14 +250,14 @@ namespace XTHR.Core.Interfaces.Repositories
         /// <param name="dataType">数据类型</param>
         /// <param name="validationRule">验证规则</param>
         /// <returns>验证结果</returns>
-        Task<ValidationResult> ValidateConfigValueAsync(string configValue, string dataType, string? validationRule = null);
+        Task<XTHR.Common.Models.ValidationResult> ValidateConfigValueAsync(string configValue, string dataType, string? validationRule = null);
         
         /// <summary>
         /// 验证配置数据
         /// </summary>
         /// <param name="config">配置对象</param>
         /// <returns>验证结果</returns>
-        Task<ValidationResult> ValidateConfigDataAsync(SystemConfig config);
+        Task<XTHR.Common.Models.ValidationResult> ValidateConfigDataAsync(SystemConfig config);
         
         /// <summary>
         /// 批量验证配置

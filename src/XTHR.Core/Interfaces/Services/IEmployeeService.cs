@@ -7,6 +7,7 @@ using XTHR.Core.DTOs.Requests;
 using XTHR.Core.DTOs.Responses;
 using XTHR.Core.DTOs.Employee;
 using XTHR.Common.Entities;
+using XTHR.Core.Entities;
 
 namespace XTHR.Core.Interfaces.Services
 {

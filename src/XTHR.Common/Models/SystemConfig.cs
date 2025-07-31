@@ -1,17 +1,28 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Common.Models
 {
     /// <summary>
     /// 系统配置实体类
     /// </summary>
-    public class SystemConfig
+    public class SystemConfig : IEntity<int>
     {
         /// <summary>
         /// 配置ID（主键）
         /// </summary>
         public int ConfigID { get; set; }
+
+        /// <summary>
+        /// 实现 IEntity<int> 接口的 Id 属性
+        /// </summary>
+        public int Id
+        {
+            get => ConfigID;
+            set => ConfigID = value;
+        }
 
         /// <summary>
         /// 配置分组
