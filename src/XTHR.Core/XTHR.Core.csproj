@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyTitle>XTHR工资计算软件 - 核心业务逻辑</AssemblyTitle>
+    <AssemblyDescription>工资计算软件的核心业务逻辑层</AssemblyDescription>
+    <AssemblyCompany>XTHR</AssemblyCompany>
+    <AssemblyProduct>XTHR Payroll System</AssemblyProduct>
+    <Copyright>Copyright © XTHR 2024</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XTHR.Common\XTHR.Common.csproj" />
+
+  </ItemGroup>
+
+</Project>

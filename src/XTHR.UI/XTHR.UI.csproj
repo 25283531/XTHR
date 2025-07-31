@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AssemblyTitle>XTHR工资计算软件</AssemblyTitle>
+    <AssemblyDescription>XTHR工资计算软件桌面应用程序</AssemblyDescription>
+    <AssemblyCompany>XTHR</AssemblyCompany>
+    <AssemblyProduct>XTHR Payroll System</AssemblyProduct>
+    <Copyright>Copyright © XTHR 2024</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XTHR.Common\XTHR.Common.csproj" />
+    <ProjectReference Include="..\XTHR.Core\XTHR.Core.csproj" />
+    <ProjectReference Include="..\XTHR.Data\XTHR.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Controls\" />
+  </ItemGroup>
+
+</Project>

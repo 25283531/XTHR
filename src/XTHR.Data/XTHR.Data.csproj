@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyTitle>XTHR工资计算软件 - 数据访问层</AssemblyTitle>
+    <AssemblyDescription>工资计算软件的数据访问层，负责SQLite数据库操作</AssemblyDescription>
+    <AssemblyCompany>XTHR</AssemblyCompany>
+    <AssemblyProduct>XTHR Payroll System</AssemblyProduct>
+    <Copyright>Copyright © XTHR 2024</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.14" />
+    <PackageReference Include="Dapper" Version="2.1.24" />
+    <PackageReference Include="NPOI" Version="2.6.2" />
+        <PackageReference Include="NCalcSync" Version="3.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XTHR.Common\XTHR.Common.csproj" />
+    <ProjectReference Include="..\XTHR.Core\XTHR.Core.csproj" />
+  </ItemGroup>
+
+</Project>

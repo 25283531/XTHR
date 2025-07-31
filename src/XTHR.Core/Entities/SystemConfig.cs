@@ -1,0 +1,75 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace XTHR.Core.Entities
+{
+    /// <summary>
+    /// 系统配置实体
+    /// </summary>
+    public class SystemConfig
+    {
+        /// <summary>
+        /// 配置键
+        /// </summary>
+        [Key]
+        [MaxLength(100)]
+        public string ConfigKey { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 配置值
+        /// </summary>
+        [MaxLength(1000)]
+        public string ConfigValue { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 配置描述
+        /// </summary>
+        [MaxLength(500)]
+        public string Description { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 配置分组
+        /// </summary>
+        [MaxLength(50)]
+        public string Group { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 是否启用
+        /// </summary>
+        public bool IsEnabled { get; set; } = true;
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
+        /// <summary>
+        /// 创建人
+        /// </summary>
+        [MaxLength(50)]
+        public string CreatedBy { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 更新人
+        /// </summary>
+        [MaxLength(50)]
+        public string UpdatedBy { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 配置类型
+        /// </summary>
+        [MaxLength(20)]
+        public string ConfigType { get; set; } = "string";
+
+        /// <summary>
+        /// 验证规则
+        /// </summary>
+        [MaxLength(200)]
+        public string ValidationRule { get; set; } = string.Empty;
+    }
+}

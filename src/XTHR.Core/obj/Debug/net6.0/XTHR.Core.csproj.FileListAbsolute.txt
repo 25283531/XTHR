@@ -1,0 +1,15 @@
+D:\Git\XTHR\src\XTHR.Core\bin\Debug\net6.0\XTHR.Core.deps.json
+D:\Git\XTHR\src\XTHR.Core\bin\Debug\net6.0\XTHR.Core.dll
+D:\Git\XTHR\src\XTHR.Core\bin\Debug\net6.0\XTHR.Core.pdb
+D:\Git\XTHR\src\XTHR.Core\bin\Debug\net6.0\XTHR.Common.dll
+D:\Git\XTHR\src\XTHR.Core\bin\Debug\net6.0\XTHR.Common.pdb
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.csproj.AssemblyReference.cache
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.AssemblyInfoInputs.cache
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.AssemblyInfo.cs
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.csproj.CoreCompileInputs.cache
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.csproj.Up2Date
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.dll
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\refint\XTHR.Core.dll
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.pdb
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\ref\XTHR.Core.dll
