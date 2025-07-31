@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Dapper;
 using XTHR.Common.Models;
@@ -64,7 +65,7 @@ namespace XTHR.Data.Repositories
         /// <param name="department">部门（可选）</param>
         /// <param name="position">职位（可选）</param>
         /// <returns>工资统计</returns>
-        Task<SalaryStatistics> GetSalaryStatisticsAsync(string department = null, string position = null);
+        Task<SalaryStatistics> GetSalaryStatisticsAsync(string? department = null, string? position = null);
         
         /// <summary>
         /// 检查员工在指定日期是否有有效的工资基础信息
@@ -129,6 +130,58 @@ namespace XTHR.Data.Repositories
                 UpdatedAt = DateTime.Now,
                 UpdatedBy = entity.UpdatedBy ?? "System"
             };
+        }
+
+        public override (IEnumerable<SalaryBase> Items, int TotalCount) GetPaged<TKey>(
+            int pageIndex, 
+            int pageSize, 
+            Expression<Func<SalaryBase, bool>> predicate = null,
+            Expression<Func<SalaryBase, TKey>> orderBy = null,
+            bool ascending = true)
+        {
+            var query = GetAll();
+            
+            if (predicate != null)
+            {
+                query = query.Where(predicate.Compile());
+            }
+            
+            var totalCount = query.Count();
+            
+            if (orderBy != null)
+            {
+                query = ascending ? query.OrderBy(orderBy.Compile()) : query.OrderByDescending(orderBy.Compile());
+            }
+            
+            var items = query.Skip(pageIndex * pageSize).Take(pageSize);
+            
+            return (items, totalCount);
+        }
+
+        public override async Task<(IEnumerable<SalaryBase> Items, int TotalCount)> GetPagedAsync<TKey>(
+            int pageIndex, 
+            int pageSize, 
+            Expression<Func<SalaryBase, bool>> predicate = null,
+            Expression<Func<SalaryBase, TKey>> orderBy = null,
+            bool ascending = true)
+        {
+            var query = await GetAllAsync();
+            
+            if (predicate != null)
+            {
+                query = query.Where(predicate.Compile());
+            }
+            
+            var totalCount = query.Count();
+            
+            if (orderBy != null)
+            {
+                query = ascending ? query.OrderBy(orderBy.Compile()) : query.OrderByDescending(orderBy.Compile());
+            }
+            
+            var items = query.Skip(pageIndex * pageSize).Take(pageSize);
+            
+            return (items, totalCount);
         }
         
         protected override object EntityToUpdateParameters(SalaryBase entity)
@@ -228,7 +281,7 @@ namespace XTHR.Data.Repositories
                 LIMIT 1";
             
             var result = await ExecuteQueryAsync(sql, new { EmployeeId = employeeId, CurrentDate = DateTime.Today });
-            return result.FirstOrDefault();
+            return result.FirstOrDefault()!;
         }
         
         public async Task<IEnumerable<SalaryBase>> GetByEmployeeIdAsync(int employeeId)
@@ -252,7 +305,7 @@ namespace XTHR.Data.Repositories
                 LIMIT 1";
             
             var result = await ExecuteQueryAsync(sql, new { EmployeeId = employeeId, Date = date });
-            return result.FirstOrDefault();
+            return result.FirstOrDefault(); // 允许返回null，调用方应处理
         }
         
         public async Task<IEnumerable<SalaryBase>> GetByEffectiveDateRangeAsync(DateTime startDate, DateTime endDate)
@@ -302,7 +355,7 @@ namespace XTHR.Data.Repositories
             });
         }
         
-        public async Task<SalaryStatistics> GetSalaryStatisticsAsync(string department = null, string position = null)
+        public async Task<SalaryStatistics> GetSalaryStatisticsAsync(string? department = null, string? position = null)
         {
             var sql = @"
                 SELECT 
@@ -329,26 +382,21 @@ namespace XTHR.Data.Repositories
                     AND sb.EffectiveDate <= @CurrentDate 
                     AND (sb.EndDate IS NULL OR sb.EndDate >= @CurrentDate)";
             
-            var parameters = new { CurrentDate = DateTime.Today };
+            var parameters = new DynamicParameters();
+            parameters.Add("@CurrentDate", DateTime.Today);
             
             if (!string.IsNullOrEmpty(department))
             {
                 sql += " AND e.Department = @Department";
-                parameters = new { CurrentDate = DateTime.Today, Department = department };
+                parameters.Add("@Department", department);
             }
             
             if (!string.IsNullOrEmpty(position))
             {
                 sql += " AND e.Position = @Position";
-                if (!string.IsNullOrEmpty(department))
-                {
-                    parameters = new { CurrentDate = DateTime.Today, Department = department, Position = position };
-                }
-                else
-                {
-                    parameters = new { CurrentDate = DateTime.Today, Position = position };
-                }
+                parameters.Add("@Position", position);
             }
+
             
             using var connection = new Microsoft.Data.Sqlite.SqliteConnection(_databaseService.GetConnectionString());
             return await connection.QuerySingleAsync<SalaryStatistics>(sql, parameters);

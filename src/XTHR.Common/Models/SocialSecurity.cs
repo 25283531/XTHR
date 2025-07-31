@@ -1,17 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Common.Models
 {
     /// <summary>
     /// 社保参保信息实体类
     /// </summary>
-    public class SocialSecurity
+    public class SocialSecurity : BaseEntity<int>
     {
-        /// <summary>
-        /// 社保信息ID（主键）
-        /// </summary>
-        public int SocialSecurityID { get; set; }
+
 
         /// <summary>
         /// 员工ID（外键）
@@ -179,25 +178,7 @@ namespace XTHR.Common.Models
         [StringLength(500, ErrorMessage = "备注长度不能超过500个字符")]
         public string? Remarks { get; set; }
 
-        /// <summary>
-        /// 创建时间
-        /// </summary>
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
 
-        /// <summary>
-        /// 更新时间
-        /// </summary>
-        public DateTime UpdatedDate { get; set; } = DateTime.Now;
-
-        /// <summary>
-        /// 创建人
-        /// </summary>
-        [StringLength(50, ErrorMessage = "创建人长度不能超过50个字符")]
-        public string? CreatedBy { get; set; }
-
-        /// <summary>
-        /// 更新人
-        /// </summary>
         [StringLength(50, ErrorMessage = "更新人长度不能超过50个字符")]
         public string? UpdatedBy { get; set; }
 

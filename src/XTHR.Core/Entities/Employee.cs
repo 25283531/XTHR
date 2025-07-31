@@ -1,18 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
     /// <summary>
     /// 员工实体
     /// </summary>
-    public class Employee
+    public class Employee : BaseEntity<int>
     {
-        /// <summary>
-        /// 员工ID
-        /// </summary>
-        [Key]
-        public int Id { get; set; }
+
 
         /// <summary>
         /// 员工编号

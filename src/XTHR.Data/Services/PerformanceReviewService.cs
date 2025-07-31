@@ -6,7 +6,7 @@ using System.Linq;
 using NPOI.SS.UserModel;
 using NPOI.XSSF.UserModel;
 using XTHR.Core.DTOs;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 using XTHR.Core.Interfaces.Repositories;
 using XTHR.Core.Interfaces.Services;
 

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using XTHR.Core.Common;
 using XTHR.Core.DTOs;
 using XTHR.Core.DTOs.Requests;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 
 namespace XTHR.Core.Interfaces.Repositories
 {

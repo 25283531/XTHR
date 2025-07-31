@@ -439,6 +439,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "XTHR.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/XTHR.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/XTHR.Core.dll": {}
+        }
       }
     }
   },
@@ -1152,6 +1162,11 @@
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "XTHR.Core/1.0.0": {
+      "type": "project",
+      "path": "../XTHR.Core/XTHR.Core.csproj",
+      "msbuildProject": "../XTHR.Core/XTHR.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1160,7 +1175,8 @@
       "Newtonsoft.Json >= 13.0.3",
       "Serilog >= 3.1.1",
       "Serilog.Sinks.File >= 5.0.0",
-      "System.ComponentModel.Annotations >= 5.0.0"
+      "System.ComponentModel.Annotations >= 5.0.0",
+      "XTHR.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1187,7 +1203,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Git\\XTHR\\src\\XTHR.Core\\XTHR.Core.csproj": {
+              "projectPath": "D:\\Git\\XTHR\\src\\XTHR.Core\\XTHR.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

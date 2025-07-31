@@ -1,11 +1,14 @@
 using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
+using System.Data;
 using XTHR.Core.Common;
 using XTHR.Core.DTOs;
 using XTHR.Core.DTOs.Requests;
+using XTHR.Common.Entities;
 
 namespace XTHR.Core.Interfaces.Repositories
 {
@@ -14,7 +17,7 @@ namespace XTHR.Core.Interfaces.Repositories
     /// </summary>
     /// <typeparam name="TEntity">实体类型</typeparam>
     /// <typeparam name="TKey">主键类型</typeparam>
-    public interface IBaseRepository<TEntity, TKey> where TEntity : class
+    public interface IBaseRepository<TEntity, TKey> where TEntity : class, IEntity<TKey>
     {
         #region 查询操作
         
@@ -203,18 +206,17 @@ namespace XTHR.Core.Interfaces.Repositories
         /// 软删除实体
         /// </summary>
         /// <param name="id">实体ID</param>
-        /// <returns>是否删除成功</returns>
+        /// <returns>是否软删除成功</returns>
         Task<bool> SoftDeleteAsync(TKey id);
         
         /// <summary>
-        /// 批量软删除
+        /// 批量软删除实体
         /// </summary>
-        /// <param name="ids">ID列表</param>
-        /// <returns>删除的数量</returns>
+        /// <param name="ids">实体ID列表</n        /// <returns>软删除的数量</returns>
         Task<int> SoftDeleteRangeAsync(IEnumerable<TKey> ids);
         
         /// <summary>
-        /// 恢复软删除的实体
+        /// 恢复软删除实体
         /// </summary>
         /// <param name="id">实体ID</param>
         /// <returns>是否恢复成功</returns>
@@ -260,6 +262,8 @@ namespace XTHR.Core.Interfaces.Repositories
         
         #endregion
     }
+
+
     
     /// <summary>
     /// 数据库事务接口

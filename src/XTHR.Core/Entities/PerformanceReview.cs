@@ -1,5 +1,7 @@
 using System;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
     public class PerformanceReview : BaseEntity<int>

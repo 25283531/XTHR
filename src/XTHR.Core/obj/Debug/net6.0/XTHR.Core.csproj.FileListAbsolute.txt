@@ -13,3 +13,4 @@ D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.dll
 D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\refint\XTHR.Core.dll
 D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.pdb
 D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\ref\XTHR.Core.dll
+D:\Git\XTHR\src\XTHR.Core\obj\Debug\net6.0\XTHR.Core.sourcelink.json

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 using XTHR.Core.Interfaces.Repositories;
 using XTHR.Core.Interfaces.Services;
 

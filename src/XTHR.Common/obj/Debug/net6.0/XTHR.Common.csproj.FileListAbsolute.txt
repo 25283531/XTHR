@@ -10,3 +10,4 @@ D:\Git\XTHR\src\XTHR.Common\obj\Debug\net6.0\XTHR.Common.dll
 D:\Git\XTHR\src\XTHR.Common\obj\Debug\net6.0\refint\XTHR.Common.dll
 D:\Git\XTHR\src\XTHR.Common\obj\Debug\net6.0\XTHR.Common.pdb
 D:\Git\XTHR\src\XTHR.Common\obj\Debug\net6.0\ref\XTHR.Common.dll
+D:\Git\XTHR\src\XTHR.Common\obj\Debug\net6.0\XTHR.Common.sourcelink.json

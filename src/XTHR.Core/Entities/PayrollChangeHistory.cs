@@ -1,6 +1,8 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
     /// <summary>

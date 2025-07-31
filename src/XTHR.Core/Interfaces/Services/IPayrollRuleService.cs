@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using XTHR.Core.DTOs;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 
 namespace XTHR.Core.Interfaces.Services
 {

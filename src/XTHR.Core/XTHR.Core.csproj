@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
     <AssemblyTitle>XTHR工资计算软件 - 核心业务逻辑</AssemblyTitle>
     <AssemblyDescription>工资计算软件的核心业务逻辑层</AssemblyDescription>
     <AssemblyCompany>XTHR</AssemblyCompany>
@@ -14,7 +14,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\XTHR.Common\XTHR.Common.csproj" />
 
   </ItemGroup>
 

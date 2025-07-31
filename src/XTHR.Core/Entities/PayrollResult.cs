@@ -1,8 +1,10 @@
 using System;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
-    public class PayrollResult
+    public class PayrollResult : BaseEntity<int>
     {
         public int Id { get; set; }
         public int EmployeeId { get; set; }

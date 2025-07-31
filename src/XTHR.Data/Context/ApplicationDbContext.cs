@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 
 namespace XTHR.Data.Context
 {

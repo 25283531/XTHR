@@ -2,6 +2,8 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
     public enum AdjustmentType

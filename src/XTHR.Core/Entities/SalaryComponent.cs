@@ -1,3 +1,5 @@
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
     public class SalaryComponent : BaseEntity<int>

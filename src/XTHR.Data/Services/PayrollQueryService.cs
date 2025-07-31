@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 using System.Threading.Tasks;
 using XTHR.Core.DTOs;
 using XTHR.Core.Interfaces.Repositories;

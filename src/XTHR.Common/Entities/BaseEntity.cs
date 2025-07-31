@@ -1,12 +1,12 @@
 using System;
 
-namespace XTHR.Core.Entities
+namespace XTHR.Common.Entities
 {
     /// <summary>
     /// 基础实体类
     /// </summary>
     /// <typeparam name="TKey">主键类型</typeparam>
-    public abstract class BaseEntity<TKey>
+    public abstract class BaseEntity<TKey> : IEntity<TKey>
     {
         /// <summary>
         /// 主键ID

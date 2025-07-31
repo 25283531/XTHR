@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using XTHR.Core.Entities;
+using XTHR.Common.Entities;
 using XTHR.Core.Interfaces.Repositories;
 using XTHR.Data.Context;
 

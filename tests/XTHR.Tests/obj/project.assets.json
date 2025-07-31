@@ -2924,7 +2924,8 @@
           "Newtonsoft.Json": "13.0.3",
           "Serilog": "3.1.1",
           "Serilog.Sinks.File": "5.0.0",
-          "System.ComponentModel.Annotations": "5.0.0"
+          "System.ComponentModel.Annotations": "5.0.0",
+          "XTHR.Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/XTHR.Common.dll": {}
@@ -2936,9 +2937,6 @@
       "XTHR.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "XTHR.Common": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/XTHR.Core.dll": {}
         },

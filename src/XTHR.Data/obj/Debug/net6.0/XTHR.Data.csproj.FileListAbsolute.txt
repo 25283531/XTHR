@@ -3,3 +3,4 @@ D:\Git\XTHR\src\XTHR.Data\obj\Debug\net6.0\XTHR.Data.GeneratedMSBuildEditorConfi
 D:\Git\XTHR\src\XTHR.Data\obj\Debug\net6.0\XTHR.Data.AssemblyInfoInputs.cache
 D:\Git\XTHR\src\XTHR.Data\obj\Debug\net6.0\XTHR.Data.AssemblyInfo.cs
 D:\Git\XTHR\src\XTHR.Data\obj\Debug\net6.0\XTHR.Data.csproj.CoreCompileInputs.cache
+D:\Git\XTHR\src\XTHR.Data\obj\Debug\net6.0\XTHR.Data.sourcelink.json

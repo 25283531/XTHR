@@ -1,8 +1,10 @@
+using XTHR.Common.Entities;
+
 namespace XTHR.Core.Entities
 {
-    public class PayrollRule
+    public class PayrollRule : BaseEntity<int>
     {
-        public int Id { get; set; }
+
         public string RuleName { get; set; }
         public string Condition { get; set; }
         public string Formula { get; set; }
